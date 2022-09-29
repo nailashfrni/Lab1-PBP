@@ -2,23 +2,41 @@
 
 {% block meta %}
 <title>Registrasi Akun</title>
+<style>
+    body {
+        background-image: url("https://i.pinimg.com/564x/15/1e/a8/151ea8d292b2a527d0a817f70cbe863d.jpg");
+    }
+
+    .card-body {
+        background-color: white;
+        border-radius: 20px;
+        padding: 50px;
+        margin: auto;
+        margin-top: 3%;
+        width: 70%;
+        height: 80%;
+    }
+
+    td {
+        margin: 20px;
+        padding: 15px;
+    }
+</style>
 {% endblock meta %}
 
 {% block content %}  
 
-<div class = "login">
+<div class = "login card-body">
     
-    <h1>Formulir Registrasi</h1>  
+    <h1>Formulir Registrasi</h1><br>
 
         <form method="POST" >  
             {% csrf_token %}  
             <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
+                {{ form.as_table }}
             </table>  
+            <br>
+            <input class="btn btn-primary" type="submit" name="submit" value="Daftar"/>
         </form>
 
     {% if messages %}  

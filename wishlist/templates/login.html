@@ -2,32 +2,42 @@
 
 {% block meta %}
 <title>Login</title>
+<style>
+    body {
+        background-image: url("https://i.pinimg.com/564x/79/ab/d7/79abd72250c0004e626c1fa1986c9f35.jpg");
+    }
+
+    .card-body {
+        background-color: white;
+        border-radius: 12px;
+        padding: 50px;
+        margin: auto;
+        margin-top: 10%;
+        width: 50%;
+        height: 80%;
+    }
+</style>
 {% endblock meta %}
 
 {% block content %}
 
-<div class = "login">
+<div class = "login card-body">
 
-    <h1>Login</h1>
+    <h1>Login</h1><br>
 
-    <form method="POST" action="">
+    <form class="" method="POST" action="">
         {% csrf_token %}
         <table>
             <tr>
-                <td>Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
                     
             <tr>
-                <td>Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+        </table><br>
+        <input class="btn btn-primary login_btn" type="submit" value="Login">
     </form>
 
     {% if messages %}
@@ -38,6 +48,7 @@
         </ul>
     {% endif %}     
         
+    <br>
     Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a>
 
 </div>
